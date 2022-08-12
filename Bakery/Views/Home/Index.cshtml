@@ -2,14 +2,14 @@
   Layout = "_Layout";
 }
 
-<h2>Welcome to your recipe box!</h2>
+<h2>Welcome to your treat box!</h2>
 <hr />
 <br>
 
 @if (User.Identity.IsAuthenticated)
 {
-  <h5>@Html.ActionLink("Add a recipe", "Create", "Recipes")</h5>
-  <h5>@Html.ActionLink("Add a category", "Create", "Categories")</h5>
+  <h5>@Html.ActionLink("Add a treat", "Create", "Treats")</h5>
+  <h5>@Html.ActionLink("Add a flavor", "Create", "Flavors")</h5>
   <br>
   <hr />
   <p>Logged in as @User.Identity.Name</p>

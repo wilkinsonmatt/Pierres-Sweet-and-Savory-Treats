@@ -2,9 +2,9 @@
   Layout = "_Layout";
 }
 
-@model RecipeBox.Models.Recipe
+@model Bakery.Models.Treat
 
-<h4>Add a recipe</h4>
+<h4>Add a treat</h4>
 <hr />
 <br>
 
@@ -13,8 +13,8 @@
   <p>Title:
   @Html.TextBoxFor(model => model.Title, new { @class = "form-control", placeholder="Required", required="required", style="width: 600px;"})</p>
 
-  <p>Category:
-  @Html.DropDownList("CategoryId")</p>
+  <p>Flavor:
+  @Html.DropDownList("FlavorId")</p>
 
   <p>Ingredients:
   @Html.TextAreaFor(model => model.Ingredients, new { @class = "form-control", style="width: 600px; height: 200px;"})</p>
@@ -30,4 +30,4 @@
 }
 <hr />
 <br>
-<h5>@Html.ActionLink("Back to recipes", "Index")</h5>
+<h5>@Html.ActionLink("Back to treats", "Index")</h5>
