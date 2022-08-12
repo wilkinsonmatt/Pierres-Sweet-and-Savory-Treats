@@ -1,0 +1,52 @@
+@{
+  Layout = "_Layout";
+}
+
+@model RecipeBox.Models.Recipe
+
+<h2>Edit @Html.DisplayFor(model => model.Title)</h2>
+<hr />
+<br>
+
+@using (Html.BeginForm())
+{
+  @Html.HiddenFor(model => model.RecipeId)
+
+  <p>Title:
+  @Html.TextBoxFor(model => model.Title, new { @class = "form-control", placeholder="Required", required="required", style="width: 600px;"})</p>
+
+  <p>Category:
+  @Html.DropDownList("CategoryId")</p>
+
+  <p>Ingredients:
+  @Html.TextAreaFor(model => model.Ingredients, new { @class = "form-control", style="width: 600px; height: 200px;"})</p>
+
+  <p>Instructions:
+  @Html.TextAreaFor(model => model.Instructions, new { @class = "form-control", style="width: 600px; height: 200px"})</p>
+
+  <p>Rating:
+  @Html.TextBoxFor(model => model.Rating)</p> 
+
+
+
+  <input type="submit" value="Save" class="btn" />
+}
+<hr />
+<br>
+<h4>Manage categories</h4>
+<br>
+  @foreach(var join in Model.JoinEntities)
+  {
+    <dl>
+      <dt>@join.Category.Name
+        @using (Html.BeginForm("DeleteCategory", "Recipes"))
+        {
+        @Html.Hidden("joinId", @join.CategoryRecipeId)
+        <input type="submit" value="Delete" class="btn"/>
+        }</dt>
+    </dl>
+    }
+
+<hr />
+<br>
+<h5>@Html.ActionLink("Back to recipes", "Index")</h5>

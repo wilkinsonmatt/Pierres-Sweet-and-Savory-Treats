@@ -1,0 +1,32 @@
+@{
+  Layout = "_Layout";
+}
+
+@model RecipeBox.Models.Category;
+
+<h2>@Html.DisplayFor(model => model.Name)</h2>
+<hr />
+<br>
+</h3>
+
+@if(@Model.JoinEntities.Count == 0)
+{
+  <p>This category does not contain any recipes</p>
+}
+else
+{
+  <h4>Recipes:</h4>
+  <ul>
+  @foreach(var join in Model.JoinEntities)
+  {
+    <li>@join.Recipe.Title</li>
+  }
+  </ul>
+}
+<hr />
+<br>
+
+<h5>@Html.ActionLink("Add recipe", "AddRecipe", new { id = Model.CategoryId })</h5>
+<h5>@Html.ActionLink("Edit category", "Edit", new { id = Model.CategoryId })</h5>
+<h5>@Html.ActionLink("Delete category", "Delete", new { id = Model.CategoryId })</h5>
+<h5>@Html.ActionLink("Back to categories", "Index")</h5>
