@@ -3,23 +3,23 @@ using Microsoft.EntityFrameworkCore.Design;
 using Microsoft.Extensions.Configuration;
 using System.IO;
 
-namespace RecipeBox.Models
+namespace Bakery.Models
 {
-  public class RecipeBoxContextFactory : IDesignTimeDbContextFactory<RecipeBoxContext>
+  public class BakeryContextFactory : IDesignTimeDbContextFactory<BakeryContext>
   {
 
-    RecipeBoxContext IDesignTimeDbContextFactory<RecipeBoxContext>.CreateDbContext(string[] args)
+    BakeryContext IDesignTimeDbContextFactory<BakeryContext>.CreateDbContext(string[] args)
     {
       IConfigurationRoot configuration = new ConfigurationBuilder()
           .SetBasePath(Directory.GetCurrentDirectory())
           .AddJsonFile("appsettings.json")
           .Build();
 
-      var builder = new DbContextOptionsBuilder<RecipeBoxContext>();
+      var builder = new DbContextOptionsBuilder<BakeryContext>();
 
       builder.UseMySql(configuration["ConnectionStrings:DefaultConnection"], ServerVersion.AutoDetect(configuration["ConnectionStrings:DefaultConnection"]));
 
-      return new RecipeBoxContext(builder.Options);
+      return new BakeryContext(builder.Options);
     }
   }
 }
