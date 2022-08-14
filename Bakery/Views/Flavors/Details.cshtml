@@ -11,24 +11,23 @@
 
 @if(@Model.JoinEntities.Count == 0)
 {
-  <p>This flavor does not contain any treats</p>
-  <h5>@Html.ActionLink("Add treat", "AddTreat", new { id = Model.FlavorId })</h5>
+  <p>No treats have this flavor listed</p>
+  <h5>@Html.ActionLink("Add this flavor to a treat", "AddTreat", new { id = Model.FlavorId })</h5>
 }
 else
 {
-  <h4>Treats:</h4>
+  <h4>Treats with this flavor:</h4>
   <ul>
   @foreach(var join in Model.JoinEntities)
   {
     <li>@join.Treat.Title</li>
-    <h5>@Html.ActionLink("Add treat", "AddTreat", new { id = Model.FlavorId })</h5>
   }
   </ul>
+  <br>
+  <h5>@Html.ActionLink("Add this flavor to a treat", "AddTreat", new { id = Model.FlavorId })</h5>
 }
 <hr />
-<br>
 
-<h5>@Html.ActionLink("Add treat", "AddTreat", new { id = Model.FlavorId })</h5>
-<h5>@Html.ActionLink("Edit flavor", "Edit", new { id = Model.FlavorId })</h5>
-<h5>@Html.ActionLink("Delete flavor", "Delete", new { id = Model.FlavorId })</h5>
-<h5>@Html.ActionLink("Back to flavors", "Index")</h5>
+<h5>@Html.ActionLink("Edit flavor", "Edit", new { id = Model.FlavorId }) | @Html.ActionLink("Delete flavor", "Delete", new { id = Model.FlavorId })</h5>
+<br>
+<h5>@Html.ActionLink("Back to list of flavors", "Index")</h5>
