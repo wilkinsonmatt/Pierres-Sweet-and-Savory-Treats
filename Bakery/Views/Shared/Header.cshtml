@@ -3,8 +3,8 @@
 
 @if (User.Identity.IsAuthenticated)
 {
-  <h4> @Html.ActionLink("home", "Index", "Home") | @Html.ActionLink("treats", "Index", "Treats") | 
-  @Html.ActionLink("flavors", "Index", "Flavors")</h4>
+  <h4> @Html.ActionLink("Home", "Index", "Home") | @Html.ActionLink("List of Treats", "Index", "Treats") | 
+  @Html.ActionLink("List of Flavors", "Index", "Flavors")</h4>
 
   <span class="logoutbtn">@using (Html.BeginForm("LogOff", "Account"))
   {

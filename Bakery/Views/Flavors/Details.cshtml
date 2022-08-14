@@ -12,6 +12,7 @@
 @if(@Model.JoinEntities.Count == 0)
 {
   <p>This flavor does not contain any treats</p>
+  <h5>@Html.ActionLink("Add treat", "AddTreat", new { id = Model.FlavorId })</h5>
 }
 else
 {
@@ -20,6 +21,7 @@ else
   @foreach(var join in Model.JoinEntities)
   {
     <li>@join.Treat.Title</li>
+    <h5>@Html.ActionLink("Add treat", "AddTreat", new { id = Model.FlavorId })</h5>
   }
   </ul>
 }

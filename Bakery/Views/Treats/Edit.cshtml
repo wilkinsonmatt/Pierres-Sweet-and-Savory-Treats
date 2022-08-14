@@ -18,17 +18,6 @@
   <p>Flavor:
   @Html.DropDownList("FlavorId")</p>
 
-  <p>Ingredients:
-  @Html.TextAreaFor(model => model.Ingredients, new { @class = "form-control", style="width: 600px; height: 200px;"})</p>
-
-  <p>Instructions:
-  @Html.TextAreaFor(model => model.Instructions, new { @class = "form-control", style="width: 600px; height: 200px"})</p>
-
-  <p>Rating:
-  @Html.TextBoxFor(model => model.Rating)</p> 
-
-
-
   <input type="submit" value="Save" class="btn" />
 }
 <hr />

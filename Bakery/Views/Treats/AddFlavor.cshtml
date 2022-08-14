@@ -13,9 +13,10 @@
 
   <h5>Add flavor:
   @Html.DropDownList("FlavorId")</h5>
-
   <input type="submit" value="Save" class="btn" />
 }
 <hr />
 <br>
-<h5>@Html.ActionLink("Back to treats", "Index")</h5>
+<h5><a href='/Flavors/Create'>Create new flavor</a></h5>
+<br>
+<h5>@Html.ActionLink("Back to list of treats", "Index")</h5>

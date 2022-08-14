@@ -5,28 +5,20 @@
 @model Bakery.Models.Treat
 
 <h2>@Html.DisplayFor(model => model.Title)</h2>
-<hr />
-<br>
+<h5>@Html.ActionLink("Edit treat", "Edit", new { id = Model.TreatId }) | @Html.ActionLink("Delete treat", "Delete", new { id = Model.TreatId })</h5>
+
 
 @if(@Model.JoinEntities.Count == 0)
 {
-  <h5>Ingredients: @Html.DisplayFor(model => model.Ingredients)</h5>
-  <h5>Instructions: @Html.DisplayFor(model => model.Instructions)</h5>
-  <h5>Rating: @Html.DisplayFor(model => model.Rating)</h5>
   <hr />
   <h4>Flavors:</h4>
+  <br>
   <p>This treat does not belong to any flavors</p>
+  <br>
+  <h5>@Html.ActionLink("Add flavor", "AddFlavor", new { id = Model.TreatId })</h5>
 }
 else
 {
-  <h3>Ingredients:</h3>
-  <h5>@Html.DisplayFor(model => model.Ingredients)</h5>
-  <br>
-  <h3>Instructions:</h3>
-  <h5>@Html.DisplayFor(model => model.Instructions)</h5>
-  <br>
-  <h3>Rating: @Html.DisplayFor(model => model.Rating)</h3>
-  <br>
   <hr />
   <h3>Flavors:</h3>
   <dl>
@@ -41,10 +33,11 @@ else
     </dt>
   }
   </dl>
+  <br>
+  <br>
+  <h5>@Html.ActionLink("Add flavor", "AddFlavor", new { id = Model.TreatId })</h5>
 }
 <hr />
 <br>
-<h5>@Html.ActionLink("Add flavor", "AddFlavor", new { id = Model.TreatId })</h5>
-<h5>@Html.ActionLink("Edit treat", "Edit", new { id = Model.TreatId })</h5>
-<h5>@Html.ActionLink("Delete treat", "Delete", new { id = Model.TreatId })</h5>
-<h5>@Html.ActionLink("Back to treats", "Index")</h5>
+<br>
+<h5>@Html.ActionLink("Back to list treats", "Index")</h5>
