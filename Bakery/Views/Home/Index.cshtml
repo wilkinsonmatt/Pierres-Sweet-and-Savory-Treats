@@ -8,16 +8,17 @@
 
 @if (User.Identity.IsAuthenticated)
 {
-  <h5>@Html.ActionLink("Add a treat", "Create", "Treats")</h5>
-  <h5>@Html.ActionLink("Add a flavor", "Create", "Flavors")</h5>
+  <h4> @Html.ActionLink("See your list of Treats", "Index", "Treats") </h4>
+  <br>
+  <h4> @Html.ActionLink("See your list of Flavors", "Index", "Flavors")</h4>
   <br>
   <hr />
-  <p>Logged in as @User.Identity.Name</p>
+  <p>Logged in as @User.Identity.Name
 
   @using (Html.BeginForm("LogOff", "Account"))
   {
     <input type="submit" class="btn btn-default" value="Log out" />
-  }
+  } </p>
 }
 else
 {
