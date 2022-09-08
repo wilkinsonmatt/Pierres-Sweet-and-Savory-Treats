@@ -22,20 +22,20 @@ else
   <hr />
   <h3>Flavors:</h3>
   <dl>
-  @foreach(var join in Model.JoinEntities)
-  {
-    <dt>@join.Flavor.Name 
-    @using (Html.BeginForm("DeleteFlavor", "Treats"))
+    @foreach(var join in Model.JoinEntities)
     {
-      @Html.Hidden("joinId", @join.FlavorTreatId) 
-      <input type="submit" value="Delete" class="btn"/>
+      <dt>@join.Flavor.Name 
+      @using (Html.BeginForm("DeleteFlavor", "Treats"))
+      {
+        @Html.Hidden("joinId", @join.FlavorTreatId) 
+        <input type="submit" value="Delete" class="btn"/>
+      }
+      </dt>
     }
-    </dt>
-  }
   </dl>
   <br>
   <br>
-  <h5>@Html.ActionLink("Add flavor", "AddFlavor", new { id = Model.TreatId })</h5>
+  <h4>@Html.ActionLink("Add flavor", "AddFlavor", new { id = Model.TreatId })</h4>
 }
 <hr />
 <br>

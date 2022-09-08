@@ -1,4 +1,4 @@
-# Pierres-Sweet-and-Savory-Treats
+# Pierres-Sweet-&-Savory-Treats
 
 #### By Matt Wilkinson
 
@@ -30,25 +30,21 @@ Once logged in a user can see a list of the Treats and flavors. Users can also c
 
 * Download/Clone entire github file
 * Open root directory with Bash
-* cd into Pierres-Sweet-and-Savory-Treats/Bakery
-* Create an appsetting.json file at the root directory
-* Create an _appsettings.json_ file in the __Bakery__ directory and copy in the following:
+* cd into __Pierres-Sweet-&-Savory-Treats/Bakery__
+* Create an __appsettings.json__ file in the __Bakery__ directory and copy in the following:
 
 ```
 { 
   "ConnectionStrings": { 
-    "DefaultConnection": "Server=localhost;Port=3306;database=Matt_Wilkinson;uid=root;pwd=[YOUR PASSWORD];" 
+    "DefaultConnection": "Server=localhost;Port=3306;database=[What you want to name the database];uid=root;pwd=[YOUR PASSWORD];" 
   } 
 }
 ```
-
 * Navigate to the __Bakery__ directory in your terminal and enter the following commands, in order:
+
 ```console
 $ dotnet build
-$ dotnet restore
 $ dotnet ef migrations add Initial
-$ dotnet ef database update
-$ dotnet ef migrations add addIdentity
 $ dotnet ef database update
 $ dotnet watch run
 ```
